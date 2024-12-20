@@ -1,34 +1,34 @@
 /* eslint-disable react/prop-types */
+import { Input } from "./Input";
+
 export const InputGroup = ({ onChange, userInput }) => {
   return (
     <section className="inputs">
       <div className="inputs__group">
-        <p>
-          <label className="inputs__label">Initial Investment</label>
-          <input
-            className="inputs__input"
-            type="number"
-            required
-            value={userInput.annualInvestment}
-            onChange={(event) =>
-              onChange("initialInvestment", event.target.value)
-            }
-          />
-        </p>
-        <p>
-          <label className="inputs__label">Annual Investment</label>
-          <input className="inputs__input" type="number" required />
-        </p>
+        <Input
+          label="Initial Investment"
+          value={userInput.initialInvestment}
+          onChange={(event) =>
+            onChange("initialInvestment", event.target.value)
+          }
+        />
+        <Input
+          label="Annual Investment"
+          value={userInput.annualInvestment}
+          onChange={(event) => onChange("annualInvestment", event.target.value)}
+        />
       </div>
       <div className="inputs__group">
-        <p>
-          <label className="inputs__label">Expected Return</label>
-          <input className="inputs__input" type="number" required />
-        </p>
-        <p>
-          <label className="inputs__label">Duration</label>
-          <input className="inputs__input" type="number" required />
-        </p>
+        <Input
+          label="Expected Return"
+          value={userInput.expectedReturn}
+          onChange={(event) => onChange("expectedReturn", event.target.value)}
+        />
+        <Input
+          label="Duration"
+          value={userInput.duration}
+          onChange={(event) => onChange("duration", event.target.value)}
+        />
       </div>
     </section>
   );
